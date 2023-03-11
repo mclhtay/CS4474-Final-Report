@@ -1,6 +1,7 @@
 {
   "name": "final-report",
   "version": "1.0.0",
+  "homepage": "https://mclhtay.github.io/CS4474-Final-Report",
   "license": "MIT",
   "idyll": {
     "theme": "idyll",

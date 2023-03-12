@@ -149,7 +149,7 @@ class NavigationMap extends React.PureComponent{
   }
 
   render(){
-    const imageUrl = `/static/images/states/${this.state.curState}.png`;
+    const imageUrl = `./static/images/states/${this.state.curState}.png`;
   
     return(
       <div style={{

@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import StateButtonsMap from '../data/states.json';
+const StateButtonsMap = require('../data/states.json');
 
 function NavigationMap(){
   const [curState, updateCurState] = useState("login-default");
@@ -19,13 +19,13 @@ function NavigationMap(){
     updateImageClassName("navigation-image-slide")
   }
   
-  const imageUrl = `/static/images/states/${curState}.png`;
+  const imageUrl = `./static/images/states/${curState}.png`;
 
   return(
     <div style={{
       display: 'flex',
       alignItems: 'center',
-      height: "500px"
+      height: "600px"
       }}>
     <img 
       className={imageClassName}

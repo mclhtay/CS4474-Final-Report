@@ -1,0 +1,132 @@
+{
+  "nodes": [
+    {
+      "id": "login-default",
+      "position": {
+        "x": 350,
+        "y": 110
+      },
+      "data": {
+        "label": "Login Default"
+      }
+    },
+    {
+      "id": "login-selection",
+      "position": {
+        "x": 350,
+        "y": 190
+      },
+      "data": {
+        "label": "Select a login type"
+      }
+    },
+    {
+      "id": "login-student-expanded",
+      "position": {
+        "x": 205,
+        "y": 270
+      },
+      "data": {
+        "label": "Login as student"
+      }
+    },
+    {
+      "id": "login-student-error",
+      "position": {
+        "x": 0,
+        "y": 270
+      },
+      "data": {
+        "label": "Login error"
+      }
+    },
+    {
+      "id": "login-admin-expanded",
+      "position": {
+        "x": 500,
+        "y": 270
+      },
+      "data": {
+        "label": "Login as admin"
+      }
+    },
+    {
+      "id": "bookings-student",
+      "position": {
+        "x": 145,
+        "y": 360
+      },
+      "data": {
+        "label": "Student home"
+      }
+    },
+    {
+      "id": "bookings-admin",
+      "position": {
+        "x": 340,
+        "y": 360
+      },
+      "data": {
+        "label": "Admins booking"
+      }
+    },
+    {
+      "id": "spaces-admin",
+      "position": {
+        "x": 590,
+        "y": 360
+      },
+      "data": {
+        "label": "Admins spaces"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "e1",
+      "source": "login-default",
+      "target": "login-selection",
+      "label": "Select on dragdown"
+    },
+    {
+      "id": "e2",
+      "source": "login-selection",
+      "target": "login-student-expanded",
+      "label": "Select student"
+    },
+    {
+      "id": "e3",
+      "source": "login-selection",
+      "target": "login-admin-expanded",
+      "label": "Select admin"
+    },
+    {
+      "id": "e4",
+      "source": "login-student-expanded",
+      "target": "login-student-error",
+      "label": "On error"
+    },
+    {
+      "id": "e5",
+      "source": "login-student-expanded",
+      "target": "bookings-student"
+    },
+    {
+      "id": "e6",
+      "source": "login-admin-expanded",
+      "target": "bookings-admin"
+    },
+    {
+      "id": "e7",
+      "source": "bookings-admin",
+      "target": "spaces-admin",
+      "label": "Toggle view"
+    },
+    {
+      "id": "e8",
+      "source": "spaces-admin",
+      "target": "bookings-admin",
+      "label": "Toggle view"
+    }
+  ]
+}

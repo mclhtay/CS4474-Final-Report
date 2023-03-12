@@ -32,11 +32,26 @@ You can try to login with the following credentials
 
 ## Executive Summary
 
-
 ## Navigation Map
-[link text:"See the entire map," url: "static/images/storyboard.jpg" target: "_blank"/]
+[var name: "navigationMode" value: "Graph"/]
+[link text:"See the detailed map," url: "static/images/storyboard.jpg" target: "_blank"/]
 [Display value: " or explore the interactive navigator below."/]
-[NavigationMap/]
+
+[div class:"navigation-map"]
+  [Display value: 'Choose a navigation mode:'/]
+  [span]
+    [Radio value: navigationMode options: `["Graph", "Controlled"]`/]
+  [/span]
+[/div]
+[FullWidth]
+  [Conditional if: `navigationMode == "Graph"`]
+      [NavigationGraph /]
+  [/Conditional]
+  [Conditional if: `navigationMode == "Controlled"`]
+    [NavigationControlled/]
+  [/Conditional]
+[/FullWidth]
+
 ## Design Principles
 
 

@@ -34,7 +34,6 @@ export default function NavigationGraph() {
           edgesFocusable={false}
           nodesDraggable={false}
           selectNodesOnDrag={false}
-          elementsSelectable={false}
           panOnDrag={false}
           zoomOnScroll={false}
           zoomOnDoubleClick={false}

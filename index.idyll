@@ -37,7 +37,7 @@ You can try to login with the following credentials
 [link text:"See the detailed map," url: "static/images/storyboard.jpg" target: "_blank"/]
 [Display value: " or explore the interactive navigator below."/]
 
-[div class:"navigation-map"]
+[div className:"navigation-map"]
   [Display value: 'Choose a navigation mode:'/]
   [span]
     [Radio value: navigationMode options: `["Graph", "Controlled"]`/]

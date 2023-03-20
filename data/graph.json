@@ -8,7 +8,8 @@
       },
       "data": {
         "label": "Login Default"
-      }
+      },
+      "selected": true
     },
     {
       "id": "login-selection",

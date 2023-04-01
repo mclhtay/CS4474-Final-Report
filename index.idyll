@@ -71,7 +71,36 @@ Overall, the LSBSW provides a user-friendly experience targeted specifically for
 
 
 ## Heuristic Evaluation
+#### Visibility of System Status
+* The system gives a status message to let the user know if the study room has been booked successfully
+#### Match Between the System and the Real World
+* Language is plain and straightforward
+* System uses skeuomorphic design in the form of a garbage icon to represent deleting a booking, a plus button to represent adding a booking, and a door with an arrow icon to represent logging out. The representations make sense and align well with their real-world counterparts.
+#### User Control & Freedom
+* If the user clicks on the add button by accident, there is a cancel button clearly marked to allow them to escape.
+* If the user clicks delete by accident, the system confirms with the user whether they really want to proceed.
+#### Consistency and Standards
+* The system maintains internal consistency by using the colour blue to indicate actions like adding a booking, confirming, logging in, etc. while using grey or white for actions that indicate canceling or going back, like deleting a booking, canceling adding a booking, or logging out.
+* However, the confirm button for when the user tries to delete a booking is not blue.
+* The system maintains external consistency by using the garbage icon for delete, plus sign for add, door icon with arrow for logout, which are commonly used in other sites.
+#### Error Prevention
+* The system does not ask the user whether they’re sure they want to logout, so errors may occur.
+#### Recognition vs. Recall in User Interfaces
+* When adding a booking, the interface shows available times and options such as quiet, private, and accessible spaces to prompt the user rather than making the user remember all of these times and features.
+#### Flexibility and Efficiency of Use
+* Enter button could be used to sign in as well as the sign in button
+#### Aesthetic and Minimalist Design
+* Most of the information shown is relevant to the user, there is very little noise (high signal to noise ratio)
+#### Help Users Recognize, Diagnose and Recover from Errors
+* Shows an error message when login in invalid, but could specify if the password is wrong, or if there is no account associated with the email
+* When the user adds a booked, there’s a warning that says “Some inputs are invalid, please adjust them to see available slots”, but this is not specific enough to help the user understand what errors could potentially occur
+#### Help & Documentation
+* No help page or chatbot
 
 
 ## Recommendations
 
+The follow are some of the possible improvements that can be made to the system:
+1. Ask the user if they’re sure they want to log out in case they clicked it by accident
+3. Make a help page or chatbot
+4. Add a maximum booking duration threshold

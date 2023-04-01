@@ -1,0 +1,86 @@
+{
+  "left": [
+    {
+      "heading": "Confirmation" ,
+      "content": "When an Admin selects the Delete button for a study space, a confirmation dialogue box is presented with Cancel and Confirm options to ensure that the action is deliberate."
+    },
+    {
+      "heading": "Affordances" ,
+      "content": "The “Show past bookings” button is displayed as a toggle switch, enabling users to correctly perceive its affordance of On/Off functionality."
+    },
+    {
+      "heading": "Mapping",
+      "content": "The selection of a booking or space is indicated to users by greying out the item when the cursor hovers over it."
+    },
+    {
+      "heading": "Hick’s Law",
+      "content": "When creating a booking, potential spaces are filtered down as more information, such as the number of seats, is provided by the user, resulting in fewer options and simplifying their decision process."
+    },
+    {
+      "heading": "Visibility",
+      "content": "The login screen of the application features two clear options: student or admin, and only displays relevant information related to logging in with credentials."
+    },
+    {
+      "heading": "Progressive Disclosure",
+      "content": "Creating a booking requires users to enter some information before any spaces are displayed, limiting the amount of information being shown to the user."
+    },
+    {
+      "heading": "Consistency",
+      "content": "The application features Functional Consistency with a consistent layout on both the “View All Bookings” and “View All Spaces” pages, a “+” icon to create a new entry, a Trash icon to delete one, along with consistent functionality of the forms for creating bookings and spaces."
+    },
+    {
+      "heading": "Control",
+      "content": "The ability to Show or Hide past bookings allows users to have control over their experience and the information being displayed according to their preferences."
+    },
+    {
+      "heading": "Feedback",
+      "content": "When creating a booking, a warning is immediately displayed when a user chooses an End Hour which is before their chosen Start Hour, stating that “Some inputs are invalid, please adjust them to see available timeslots”."
+    },
+    {
+      "heading": "Positive Transfer",
+      "content": "The application features multiple tables which are designed to be intuitively understood by users due to Positive Transfer from other Western-run software."
+    }
+  ],
+  "right": [
+    {
+      "heading": "Constraints",
+      "content": "The Constraints principle is applied by limiting certain capabilities to authorized Admin users only, while restricting Student users from making any changes to the library system, thereby ensuring a secure and user-friendly experience."
+    },
+    {
+      "heading": "Familiarity",
+      "content": "The Trash icon is used to suggest its behaviour, which is to delete or “throw away” a space or booking."
+    },
+    {
+      "heading": "Working Memory",
+      "content": "The selection of upcoming calendar dates when creating a booking is facilitated by presenting users with a typical calendar, thereby eliminating the necessity to memorize dates via reflective cognition."
+    },
+    {
+      "heading": "Causality",
+      "content": "When a user clicks the Delete button after selecting a space,  “[name of space] will be deleted” is displayed, referring back to the selected space to help users understand the causality of the action being taken."
+    },
+    {
+      "heading": "Semiotics",
+      "content": "The system uses symbolic signs to represent library resources, such as room names and numbers to represent different study rooms, through arbitrary relationships to these resources as part of a system of signs that help users interpret the available resources."
+    },
+    {
+      "heading": "Gestalt rules",
+      "content": "The Law of Proximity is used to chunk relevant information together, such as using horizontal rules to separate the available spaces in a list format to keep the rooms separated but still close together as they are related."
+    },
+    {
+      "heading": "Fidelity",
+      "content": "The system uses low fidelity to represent library resources. For example, the LSBSW does not actually represent a real physical library, but this is advantageous as the system is able to focus on the information that is relevant to the task of booking rooms."
+    },
+    {
+      "heading": "Representations",
+      "content": "Symbol representations are used to indicate whether a room is available at a certain time, using an ‘x’ or a check mark."
+    },
+    {
+      "heading": "Metaphors",
+      "content": "The LSBSW incorporates the ‘conversing’ metaphor which allows users to use text-based input to communicate with the system. It then provides feedback i.e. valid or invalid, based on its interpretation or understanding of the input."
+    },
+    {
+      "heading": "Knowing the User",
+      "content": "User experience goals are met that can allow students to easily manage library resources online through simplistic and minimal visual elements. The usability goals are met by ensuring that users are able to intuitively understand how to use the platform through clear instructions."
+    }
+  ]
+}

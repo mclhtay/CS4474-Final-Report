@@ -1,4 +1,100 @@
-require=(function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({"/Users/carterjin/Desktop/University/Fourth year/4474/CS4474-Final-Report/components/navigation-controlled.js":[function(require,module,exports){
+require=(function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({"/Users/carterjin/Desktop/University/Fourth year/4474/CS4474-Final-Report/components/design.js":[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = Design;
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactAccessibleAccordion = require('react-accessible-accordion');
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Designs = require('../data/design-principles.json');
+
+function Design() {
+  return _react2.default.createElement(
+    'div',
+    { style: {
+        display: "flex",
+        width: "100%"
+      } },
+    _react2.default.createElement(
+      'div',
+      { style: {
+          width: "50%"
+        } },
+      _react2.default.createElement(
+        _reactAccessibleAccordion.Accordion,
+        { allowZeroExpanded: true },
+        Designs.left.map(function (design) {
+          return _react2.default.createElement(
+            _reactAccessibleAccordion.AccordionItem,
+            null,
+            _react2.default.createElement(
+              _reactAccessibleAccordion.AccordionItemHeading,
+              null,
+              _react2.default.createElement(
+                _reactAccessibleAccordion.AccordionItemButton,
+                null,
+                design.heading
+              )
+            ),
+            _react2.default.createElement(
+              _reactAccessibleAccordion.AccordionItemPanel,
+              null,
+              _react2.default.createElement(
+                'p',
+                null,
+                design.content
+              )
+            )
+          );
+        })
+      )
+    ),
+    _react2.default.createElement(
+      'div',
+      { style: {
+          width: "50%"
+        } },
+      _react2.default.createElement(
+        _reactAccessibleAccordion.Accordion,
+        { allowZeroExpanded: true },
+        Designs.right.map(function (design) {
+          return _react2.default.createElement(
+            _reactAccessibleAccordion.AccordionItem,
+            null,
+            _react2.default.createElement(
+              _reactAccessibleAccordion.AccordionItemHeading,
+              null,
+              _react2.default.createElement(
+                _reactAccessibleAccordion.AccordionItemButton,
+                null,
+                design.heading
+              )
+            ),
+            _react2.default.createElement(
+              _reactAccessibleAccordion.AccordionItemPanel,
+              null,
+              _react2.default.createElement(
+                'p',
+                null,
+                design.content
+              )
+            )
+          );
+        })
+      )
+    )
+  );
+}
+
+},{"../data/design-principles.json":"/Users/carterjin/Desktop/University/Fourth year/4474/CS4474-Final-Report/data/design-principles.json","react":"react","react-accessible-accordion":"/Users/carterjin/Desktop/University/Fourth year/4474/CS4474-Final-Report/node_modules/react-accessible-accordion/dist/umd/index.js"}],"/Users/carterjin/Desktop/University/Fourth year/4474/CS4474-Final-Report/components/navigation-controlled.js":[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -191,7 +287,94 @@ function NavigationGraph() {
   );
 }
 
-},{"../data/graph.json":"/Users/carterjin/Desktop/University/Fourth year/4474/CS4474-Final-Report/data/graph.json","react":"react","reactflow":"/Users/carterjin/Desktop/University/Fourth year/4474/CS4474-Final-Report/node_modules/reactflow/dist/umd/index.js"}],"/Users/carterjin/Desktop/University/Fourth year/4474/CS4474-Final-Report/data/graph.json":[function(require,module,exports){
+},{"../data/graph.json":"/Users/carterjin/Desktop/University/Fourth year/4474/CS4474-Final-Report/data/graph.json","react":"react","reactflow":"/Users/carterjin/Desktop/University/Fourth year/4474/CS4474-Final-Report/node_modules/reactflow/dist/umd/index.js"}],"/Users/carterjin/Desktop/University/Fourth year/4474/CS4474-Final-Report/data/design-principles.json":[function(require,module,exports){
+module.exports={
+  "left": [
+    {
+      "heading": "Confirmation" ,
+      "content": "When an Admin selects the Delete button for a study space, a confirmation dialogue box is presented with Cancel and Confirm options to ensure that the action is deliberate."
+    },
+    {
+      "heading": "Affordances" ,
+      "content": "The “Show past bookings” button is displayed as a toggle switch, enabling users to correctly perceive its affordance of On/Off functionality."
+    },
+    {
+      "heading": "Mapping",
+      "content": "The selection of a booking or space is indicated to users by greying out the item when the cursor hovers over it."
+    },
+    {
+      "heading": "Hick’s Law",
+      "content": "When creating a booking, potential spaces are filtered down as more information, such as the number of seats, is provided by the user, resulting in fewer options and simplifying their decision process."
+    },
+    {
+      "heading": "Visibility",
+      "content": "The login screen of the application features two clear options: student or admin, and only displays relevant information related to logging in with credentials."
+    },
+    {
+      "heading": "Progressive Disclosure",
+      "content": "Creating a booking requires users to enter some information before any spaces are displayed, limiting the amount of information being shown to the user."
+    },
+    {
+      "heading": "Consistency",
+      "content": "The application features Functional Consistency with a consistent layout on both the “View All Bookings” and “View All Spaces” pages, a “+” icon to create a new entry, a Trash icon to delete one, along with consistent functionality of the forms for creating bookings and spaces."
+    },
+    {
+      "heading": "Control",
+      "content": "The ability to Show or Hide past bookings allows users to have control over their experience and the information being displayed according to their preferences."
+    },
+    {
+      "heading": "Feedback",
+      "content": "When creating a booking, a warning is immediately displayed when a user chooses an End Hour which is before their chosen Start Hour, stating that “Some inputs are invalid, please adjust them to see available timeslots”."
+    },
+    {
+      "heading": "Positive Transfer",
+      "content": "The application features multiple tables which are designed to be intuitively understood by users due to Positive Transfer from other Western-run software."
+    }
+  ],
+  "right": [
+    {
+      "heading": "Constraints",
+      "content": "The Constraints principle is applied by limiting certain capabilities to authorized Admin users only, while restricting Student users from making any changes to the library system, thereby ensuring a secure and user-friendly experience."
+    },
+    {
+      "heading": "Familiarity",
+      "content": "The Trash icon is used to suggest its behaviour, which is to delete or “throw away” a space or booking."
+    },
+    {
+      "heading": "Working Memory",
+      "content": "The selection of upcoming calendar dates when creating a booking is facilitated by presenting users with a typical calendar, thereby eliminating the necessity to memorize dates via reflective cognition."
+    },
+    {
+      "heading": "Causality",
+      "content": "When a user clicks the Delete button after selecting a space,  “[name of space] will be deleted” is displayed, referring back to the selected space to help users understand the causality of the action being taken."
+    },
+    {
+      "heading": "Semiotics",
+      "content": "The system uses symbolic signs to represent library resources, such as room names and numbers to represent different study rooms, through arbitrary relationships to these resources as part of a system of signs that help users interpret the available resources."
+    },
+    {
+      "heading": "Gestalt rules",
+      "content": "The Law of Proximity is used to chunk relevant information together, such as using horizontal rules to separate the available spaces in a list format to keep the rooms separated but still close together as they are related."
+    },
+    {
+      "heading": "Fidelity",
+      "content": "The system uses low fidelity to represent library resources. For example, the LSBSW does not actually represent a real physical library, but this is advantageous as the system is able to focus on the information that is relevant to the task of booking rooms."
+    },
+    {
+      "heading": "Representations",
+      "content": "Symbol representations are used to indicate whether a room is available at a certain time, using an ‘x’ or a check mark."
+    },
+    {
+      "heading": "Metaphors",
+      "content": "The LSBSW incorporates the ‘conversing’ metaphor which allows users to use text-based input to communicate with the system. It then provides feedback i.e. valid or invalid, based on its interpretation or understanding of the input."
+    },
+    {
+      "heading": "Knowing the User",
+      "content": "User experience goals are met that can allow students to easily manage library resources online through simplistic and minimal visual elements. The usability goals are met by ensuring that users are able to intuitively understand how to use the platform through clear instructions."
+    }
+  ]
+}
+},{}],"/Users/carterjin/Desktop/University/Fourth year/4474/CS4474-Final-Report/data/graph.json":[function(require,module,exports){
 module.exports={
   "nodes": [
     {
@@ -30255,7 +30438,944 @@ module.exports = ReactPropTypesSecret;
 },{}],"/Users/carterjin/Desktop/University/Fourth year/4474/CS4474-Final-Report/node_modules/prop-types/lib/has.js":[function(require,module,exports){
 module.exports = Function.call.bind(Object.prototype.hasOwnProperty);
 
-},{}],"/Users/carterjin/Desktop/University/Fourth year/4474/CS4474-Final-Report/node_modules/react-dom-factories/index.js":[function(require,module,exports){
+},{}],"/Users/carterjin/Desktop/University/Fourth year/4474/CS4474-Final-Report/node_modules/react-accessible-accordion/dist/umd/index.js":[function(require,module,exports){
+(function (global, factory) {
+  typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('react')) :
+  typeof define === 'function' && define.amd ? define(['exports', 'react'], factory) :
+  (global = global || self, factory(global.reactAccessibleAccordion = {}, global.React));
+}(this, (function (exports, React) { 'use strict';
+
+  function ownKeys(object, enumerableOnly) {
+    var keys = Object.keys(object);
+
+    if (Object.getOwnPropertySymbols) {
+      var symbols = Object.getOwnPropertySymbols(object);
+      enumerableOnly && (symbols = symbols.filter(function (sym) {
+        return Object.getOwnPropertyDescriptor(object, sym).enumerable;
+      })), keys.push.apply(keys, symbols);
+    }
+
+    return keys;
+  }
+
+  function _objectSpread2(target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = null != arguments[i] ? arguments[i] : {};
+      i % 2 ? ownKeys(Object(source), !0).forEach(function (key) {
+        _defineProperty(target, key, source[key]);
+      }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) {
+        Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
+      });
+    }
+
+    return target;
+  }
+
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  function _defineProperties(target, props) {
+    for (var i = 0; i < props.length; i++) {
+      var descriptor = props[i];
+      descriptor.enumerable = descriptor.enumerable || false;
+      descriptor.configurable = true;
+      if ("value" in descriptor) descriptor.writable = true;
+      Object.defineProperty(target, descriptor.key, descriptor);
+    }
+  }
+
+  function _createClass(Constructor, protoProps, staticProps) {
+    if (protoProps) _defineProperties(Constructor.prototype, protoProps);
+    if (staticProps) _defineProperties(Constructor, staticProps);
+    Object.defineProperty(Constructor, "prototype", {
+      writable: false
+    });
+    return Constructor;
+  }
+
+  function _defineProperty(obj, key, value) {
+    if (key in obj) {
+      Object.defineProperty(obj, key, {
+        value: value,
+        enumerable: true,
+        configurable: true,
+        writable: true
+      });
+    } else {
+      obj[key] = value;
+    }
+
+    return obj;
+  }
+
+  function _extends() {
+    _extends = Object.assign || function (target) {
+      for (var i = 1; i < arguments.length; i++) {
+        var source = arguments[i];
+
+        for (var key in source) {
+          if (Object.prototype.hasOwnProperty.call(source, key)) {
+            target[key] = source[key];
+          }
+        }
+      }
+
+      return target;
+    };
+
+    return _extends.apply(this, arguments);
+  }
+
+  function _inherits(subClass, superClass) {
+    if (typeof superClass !== "function" && superClass !== null) {
+      throw new TypeError("Super expression must either be null or a function");
+    }
+
+    subClass.prototype = Object.create(superClass && superClass.prototype, {
+      constructor: {
+        value: subClass,
+        writable: true,
+        configurable: true
+      }
+    });
+    Object.defineProperty(subClass, "prototype", {
+      writable: false
+    });
+    if (superClass) _setPrototypeOf(subClass, superClass);
+  }
+
+  function _getPrototypeOf(o) {
+    _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) {
+      return o.__proto__ || Object.getPrototypeOf(o);
+    };
+    return _getPrototypeOf(o);
+  }
+
+  function _setPrototypeOf(o, p) {
+    _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) {
+      o.__proto__ = p;
+      return o;
+    };
+
+    return _setPrototypeOf(o, p);
+  }
+
+  function _isNativeReflectConstruct() {
+    if (typeof Reflect === "undefined" || !Reflect.construct) return false;
+    if (Reflect.construct.sham) return false;
+    if (typeof Proxy === "function") return true;
+
+    try {
+      Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {}));
+      return true;
+    } catch (e) {
+      return false;
+    }
+  }
+
+  function _objectWithoutPropertiesLoose(source, excluded) {
+    if (source == null) return {};
+    var target = {};
+    var sourceKeys = Object.keys(source);
+    var key, i;
+
+    for (i = 0; i < sourceKeys.length; i++) {
+      key = sourceKeys[i];
+      if (excluded.indexOf(key) >= 0) continue;
+      target[key] = source[key];
+    }
+
+    return target;
+  }
+
+  function _objectWithoutProperties(source, excluded) {
+    if (source == null) return {};
+
+    var target = _objectWithoutPropertiesLoose(source, excluded);
+
+    var key, i;
+
+    if (Object.getOwnPropertySymbols) {
+      var sourceSymbolKeys = Object.getOwnPropertySymbols(source);
+
+      for (i = 0; i < sourceSymbolKeys.length; i++) {
+        key = sourceSymbolKeys[i];
+        if (excluded.indexOf(key) >= 0) continue;
+        if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue;
+        target[key] = source[key];
+      }
+    }
+
+    return target;
+  }
+
+  function _assertThisInitialized(self) {
+    if (self === void 0) {
+      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+    }
+
+    return self;
+  }
+
+  function _possibleConstructorReturn(self, call) {
+    if (call && (typeof call === "object" || typeof call === "function")) {
+      return call;
+    } else if (call !== void 0) {
+      throw new TypeError("Derived constructors may only return object or undefined");
+    }
+
+    return _assertThisInitialized(self);
+  }
+
+  function _createSuper(Derived) {
+    var hasNativeReflectConstruct = _isNativeReflectConstruct();
+
+    return function _createSuperInternal() {
+      var Super = _getPrototypeOf(Derived),
+          result;
+
+      if (hasNativeReflectConstruct) {
+        var NewTarget = _getPrototypeOf(this).constructor;
+
+        result = Reflect.construct(Super, arguments, NewTarget);
+      } else {
+        result = Super.apply(this, arguments);
+      }
+
+      return _possibleConstructorReturn(this, result);
+    };
+  }
+
+  function _slicedToArray(arr, i) {
+    return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest();
+  }
+
+  function _toConsumableArray(arr) {
+    return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread();
+  }
+
+  function _arrayWithoutHoles(arr) {
+    if (Array.isArray(arr)) return _arrayLikeToArray(arr);
+  }
+
+  function _arrayWithHoles(arr) {
+    if (Array.isArray(arr)) return arr;
+  }
+
+  function _iterableToArray(iter) {
+    if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter);
+  }
+
+  function _iterableToArrayLimit(arr, i) {
+    var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"];
+
+    if (_i == null) return;
+    var _arr = [];
+    var _n = true;
+    var _d = false;
+
+    var _s, _e;
+
+    try {
+      for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) {
+        _arr.push(_s.value);
+
+        if (i && _arr.length === i) break;
+      }
+    } catch (err) {
+      _d = true;
+      _e = err;
+    } finally {
+      try {
+        if (!_n && _i["return"] != null) _i["return"]();
+      } finally {
+        if (_d) throw _e;
+      }
+    }
+
+    return _arr;
+  }
+
+  function _unsupportedIterableToArray(o, minLen) {
+    if (!o) return;
+    if (typeof o === "string") return _arrayLikeToArray(o, minLen);
+    var n = Object.prototype.toString.call(o).slice(8, -1);
+    if (n === "Object" && o.constructor) n = o.constructor.name;
+    if (n === "Map" || n === "Set") return Array.from(o);
+    if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);
+  }
+
+  function _arrayLikeToArray(arr, len) {
+    if (len == null || len > arr.length) len = arr.length;
+
+    for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i];
+
+    return arr2;
+  }
+
+  function _nonIterableSpread() {
+    throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+  }
+
+  function _nonIterableRest() {
+    throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+  }
+
+  var AccordionStore = /*#__PURE__*/_createClass(function AccordionStore(_ref) {
+    var _this = this;
+
+    var _ref$expanded = _ref.expanded,
+        _expanded = _ref$expanded === void 0 ? [] : _ref$expanded,
+        _ref$allowMultipleExp = _ref.allowMultipleExpanded,
+        allowMultipleExpanded = _ref$allowMultipleExp === void 0 ? false : _ref$allowMultipleExp,
+        _ref$allowZeroExpande = _ref.allowZeroExpanded,
+        allowZeroExpanded = _ref$allowZeroExpande === void 0 ? false : _ref$allowZeroExpande;
+
+    _classCallCheck(this, AccordionStore);
+
+    _defineProperty(this, "expanded", void 0);
+
+    _defineProperty(this, "allowMultipleExpanded", void 0);
+
+    _defineProperty(this, "allowZeroExpanded", void 0);
+
+    _defineProperty(this, "toggleExpanded", function (uuid) {
+      if (_this.isItemDisabled(uuid)) {
+        return _this;
+      }
+
+      var isExpanded = _this.isItemExpanded(uuid);
+
+      if (!isExpanded) {
+        return _this.augment({
+          expanded: _this.allowMultipleExpanded ? [].concat(_toConsumableArray(_this.expanded), [uuid]) : [uuid]
+        });
+      } else {
+        return _this.augment({
+          expanded: _this.expanded.filter(function (expandedUuid) {
+            return expandedUuid !== uuid;
+          })
+        });
+      }
+    });
+
+    _defineProperty(this, "isItemDisabled", function (uuid) {
+      var isExpanded = _this.isItemExpanded(uuid);
+
+      var isOnlyOneExpanded = _this.expanded.length === 1;
+      return Boolean(isExpanded && !_this.allowZeroExpanded && isOnlyOneExpanded);
+    });
+
+    _defineProperty(this, "isItemExpanded", function (uuid) {
+      return _this.expanded.indexOf(uuid) !== -1;
+    });
+
+    _defineProperty(this, "getPanelAttributes", function (uuid, dangerouslySetExpanded) {
+      var expanded = dangerouslySetExpanded !== null && dangerouslySetExpanded !== void 0 ? dangerouslySetExpanded : _this.isItemExpanded(uuid);
+      return {
+        role: _this.allowMultipleExpanded ? undefined : 'region',
+        'aria-hidden': _this.allowMultipleExpanded ? !expanded : undefined,
+        'aria-labelledby': _this.getButtonId(uuid),
+        id: _this.getPanelId(uuid),
+        hidden: expanded ? undefined : true
+      };
+    });
+
+    _defineProperty(this, "getHeadingAttributes", function () {
+      return {
+        role: 'heading'
+      };
+    });
+
+    _defineProperty(this, "getButtonAttributes", function (uuid, dangerouslySetExpanded) {
+      var expanded = dangerouslySetExpanded !== null && dangerouslySetExpanded !== void 0 ? dangerouslySetExpanded : _this.isItemExpanded(uuid);
+
+      var disabled = _this.isItemDisabled(uuid);
+
+      return {
+        id: _this.getButtonId(uuid),
+        'aria-disabled': disabled,
+        'aria-expanded': expanded,
+        'aria-controls': _this.getPanelId(uuid),
+        role: 'button',
+        tabIndex: 0
+      };
+    });
+
+    _defineProperty(this, "getPanelId", function (id) {
+      return "accordion__panel-".concat(id);
+    });
+
+    _defineProperty(this, "getButtonId", function (id) {
+      return "accordion__heading-".concat(id);
+    });
+
+    _defineProperty(this, "augment", function (args) {
+      return new AccordionStore(_objectSpread2({
+        expanded: _this.expanded,
+        allowMultipleExpanded: _this.allowMultipleExpanded,
+        allowZeroExpanded: _this.allowZeroExpanded
+      }, args));
+    });
+
+    this.expanded = _expanded;
+    this.allowMultipleExpanded = allowMultipleExpanded;
+    this.allowZeroExpanded = allowZeroExpanded;
+  });
+
+  var Context = /*#__PURE__*/React.createContext(null);
+  var Provider = /*#__PURE__*/function (_React$PureComponent) {
+    _inherits(Provider, _React$PureComponent);
+
+    var _super = _createSuper(Provider);
+
+    function Provider() {
+      var _this;
+
+      _classCallCheck(this, Provider);
+
+      for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+        args[_key] = arguments[_key];
+      }
+
+      _this = _super.call.apply(_super, [this].concat(args));
+
+      _defineProperty(_assertThisInitialized(_this), "state", new AccordionStore({
+        expanded: _this.props.preExpanded,
+        allowMultipleExpanded: _this.props.allowMultipleExpanded,
+        allowZeroExpanded: _this.props.allowZeroExpanded
+      }));
+
+      _defineProperty(_assertThisInitialized(_this), "toggleExpanded", function (key) {
+        _this.setState(function (state) {
+          return state.toggleExpanded(key);
+        }, function () {
+          if (_this.props.onChange) {
+            _this.props.onChange(_this.state.expanded);
+          }
+        });
+      });
+
+      _defineProperty(_assertThisInitialized(_this), "isItemDisabled", function (key) {
+        return _this.state.isItemDisabled(key);
+      });
+
+      _defineProperty(_assertThisInitialized(_this), "isItemExpanded", function (key) {
+        return _this.state.isItemExpanded(key);
+      });
+
+      _defineProperty(_assertThisInitialized(_this), "getPanelAttributes", function (key, dangerouslySetExpanded) {
+        return _this.state.getPanelAttributes(key, dangerouslySetExpanded);
+      });
+
+      _defineProperty(_assertThisInitialized(_this), "getHeadingAttributes", function () {
+        // uuid: UUID
+        return _this.state.getHeadingAttributes();
+      });
+
+      _defineProperty(_assertThisInitialized(_this), "getButtonAttributes", function (key, dangerouslySetExpanded) {
+        return _this.state.getButtonAttributes(key, dangerouslySetExpanded);
+      });
+
+      return _this;
+    }
+
+    _createClass(Provider, [{
+      key: "render",
+      value: function render() {
+        var _this$state = this.state,
+            allowZeroExpanded = _this$state.allowZeroExpanded,
+            allowMultipleExpanded = _this$state.allowMultipleExpanded;
+        return /*#__PURE__*/React.createElement(Context.Provider, {
+          value: {
+            allowMultipleExpanded: allowMultipleExpanded,
+            allowZeroExpanded: allowZeroExpanded,
+            toggleExpanded: this.toggleExpanded,
+            isItemDisabled: this.isItemDisabled,
+            isItemExpanded: this.isItemExpanded,
+            getPanelAttributes: this.getPanelAttributes,
+            getHeadingAttributes: this.getHeadingAttributes,
+            getButtonAttributes: this.getButtonAttributes
+          }
+        }, this.props.children || null);
+      }
+    }]);
+
+    return Provider;
+  }(React.PureComponent);
+
+  _defineProperty(Provider, "defaultProps", {
+    allowMultipleExpanded: false,
+    allowZeroExpanded: false
+  });
+
+  var Consumer = /*#__PURE__*/function (_React$PureComponent2) {
+    _inherits(Consumer, _React$PureComponent2);
+
+    var _super2 = _createSuper(Consumer);
+
+    function Consumer() {
+      var _this2;
+
+      _classCallCheck(this, Consumer);
+
+      for (var _len2 = arguments.length, args = new Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
+        args[_key2] = arguments[_key2];
+      }
+
+      _this2 = _super2.call.apply(_super2, [this].concat(args));
+
+      _defineProperty(_assertThisInitialized(_this2), "renderChildren", function (container) {
+        return container ? _this2.props.children(container) : null;
+      });
+
+      return _this2;
+    }
+
+    _createClass(Consumer, [{
+      key: "render",
+      value: function render() {
+        return /*#__PURE__*/React.createElement(Context.Consumer, null, this.renderChildren);
+      }
+    }]);
+
+    return Consumer;
+  }(React.PureComponent);
+
+  var _excluded = ["className", "allowMultipleExpanded", "allowZeroExpanded", "onChange", "preExpanded"];
+
+  var Accordion = function Accordion(_ref) {
+    var _ref$className = _ref.className,
+        className = _ref$className === void 0 ? 'accordion' : _ref$className,
+        allowMultipleExpanded = _ref.allowMultipleExpanded,
+        allowZeroExpanded = _ref.allowZeroExpanded,
+        onChange = _ref.onChange,
+        preExpanded = _ref.preExpanded,
+        rest = _objectWithoutProperties(_ref, _excluded);
+
+    return /*#__PURE__*/React.createElement(Provider, {
+      preExpanded: preExpanded,
+      allowMultipleExpanded: allowMultipleExpanded,
+      allowZeroExpanded: allowZeroExpanded,
+      onChange: onChange
+    }, /*#__PURE__*/React.createElement("div", _extends({
+      "data-accordion-component": "Accordion",
+      className: className
+    }, rest)));
+  };
+
+  var DisplayName;
+
+  (function (DisplayName) {
+    DisplayName["Accordion"] = "Accordion";
+    DisplayName["AccordionItem"] = "AccordionItem";
+    DisplayName["AccordionItemButton"] = "AccordionItemButton";
+    DisplayName["AccordionItemHeading"] = "AccordionItemHeading";
+    DisplayName["AccordionItemPanel"] = "AccordionItemPanel";
+  })(DisplayName || (DisplayName = {}));
+
+  var DisplayName$1 = DisplayName;
+
+  // @ts-ignore
+  var DEFAULT = 0;
+  var counter = 0;
+  function useGlobalCounterId() {
+    var current = counter;
+    counter = counter + 1;
+    return "raa-".concat(current);
+  }
+  function resetGlobalCounterId() {
+    counter = DEFAULT;
+  }
+  var useNextId = React.useId || useGlobalCounterId; // HTML5 ids allow all unicode characters, except for ASCII whitespaces
+  // https://infra.spec.whatwg.org/#ascii-whitespace
+  // eslint-disable-next-line no-control-regex
+
+  var idRegex = /[\u0009\u000a\u000c\u000d\u0020]/g;
+  function assertValidHtmlId(htmlId) {
+    if (htmlId === '' || idRegex.test(htmlId)) {
+      console.error("uuid must be a valid HTML5 id but was given \"".concat(htmlId, "\", ASCII whitespaces are forbidden"));
+      return false;
+    }
+
+    return true;
+  }
+
+  var Context$1 = /*#__PURE__*/React.createContext(null);
+
+  var Provider$1 = function Provider(_ref) {
+    var children = _ref.children,
+        uuid = _ref.uuid,
+        accordionContext = _ref.accordionContext,
+        dangerouslySetExpanded = _ref.dangerouslySetExpanded;
+
+    var toggleExpanded = function toggleExpanded() {
+      accordionContext.toggleExpanded(uuid);
+    };
+
+    var renderChildren = function renderChildren(accordionContext) {
+      var expanded = dangerouslySetExpanded !== null && dangerouslySetExpanded !== void 0 ? dangerouslySetExpanded : accordionContext.isItemExpanded(uuid);
+      var disabled = accordionContext.isItemDisabled(uuid);
+      var panelAttributes = accordionContext.getPanelAttributes(uuid, dangerouslySetExpanded);
+      var headingAttributes = accordionContext.getHeadingAttributes(uuid);
+      var buttonAttributes = accordionContext.getButtonAttributes(uuid, dangerouslySetExpanded);
+      return /*#__PURE__*/React.createElement(Context$1.Provider, {
+        value: {
+          uuid: uuid,
+          expanded: expanded,
+          disabled: disabled,
+          toggleExpanded: toggleExpanded,
+          panelAttributes: panelAttributes,
+          headingAttributes: headingAttributes,
+          buttonAttributes: buttonAttributes
+        }
+      }, children);
+    };
+
+    return /*#__PURE__*/React.createElement(Consumer, null, renderChildren);
+  };
+
+  var ProviderWrapper = function ProviderWrapper(props) {
+    return /*#__PURE__*/React.createElement(Consumer, null, function (accordionContext) {
+      return /*#__PURE__*/React.createElement(Provider$1, _extends({}, props, {
+        accordionContext: accordionContext
+      }));
+    });
+  };
+  var Consumer$1 = function Consumer(_ref2) {
+    var children = _ref2.children;
+
+    var renderChildren = function renderChildren(container) {
+      return container ? children(container) : null;
+    };
+
+    return /*#__PURE__*/React.createElement(Context$1.Consumer, null, renderChildren);
+  };
+
+  var _excluded$1 = ["uuid", "dangerouslySetExpanded", "className", "activeClassName"];
+
+  var AccordionItem = function AccordionItem(_ref) {
+    var customUuid = _ref.uuid,
+        dangerouslySetExpanded = _ref.dangerouslySetExpanded,
+        _ref$className = _ref.className,
+        className = _ref$className === void 0 ? 'accordion__item' : _ref$className,
+        activeClassName = _ref.activeClassName,
+        rest = _objectWithoutProperties(_ref, _excluded$1);
+
+    var _useState = React.useState(useNextId()),
+        _useState2 = _slicedToArray(_useState, 1),
+        instanceUuid = _useState2[0];
+
+    var uuid = customUuid !== null && customUuid !== void 0 ? customUuid : instanceUuid;
+
+    var renderChildren = function renderChildren(itemContext) {
+      var expanded = itemContext.expanded;
+      var cx = expanded && activeClassName ? activeClassName : className;
+      return /*#__PURE__*/React.createElement("div", _extends({
+        "data-accordion-component": "AccordionItem",
+        className: cx
+      }, rest));
+    };
+
+    assertValidHtmlId(uuid.toString());
+
+    if (rest.id) {
+      assertValidHtmlId(rest.id);
+    }
+
+    return /*#__PURE__*/React.createElement(ProviderWrapper, {
+      uuid: uuid,
+      dangerouslySetExpanded: dangerouslySetExpanded
+    }, /*#__PURE__*/React.createElement(Consumer$1, null, renderChildren));
+  };
+
+  AccordionItem.displayName = DisplayName$1.AccordionItem;
+
+  function getClosestAccordion(el) {
+    return el && (el.matches('[data-accordion-component="Accordion"]') ? el : getClosestAccordion(el.parentElement));
+  }
+  function getSiblingButtons(item) {
+    var parentAccordion = getClosestAccordion(item);
+    return parentAccordion && Array.from(parentAccordion.querySelectorAll('[data-accordion-component="AccordionItemButton"]'));
+  }
+  function focusFirstSiblingOf(item) {
+    var siblings = getSiblingButtons(item) || [];
+    var first = siblings[0];
+
+    if (first) {
+      first.focus();
+    }
+  }
+  function focusLastSiblingOf(item) {
+    var siblings = getSiblingButtons(item) || [];
+    var last = siblings[siblings.length - 1];
+
+    if (last) {
+      last.focus();
+    }
+  }
+  function focusNextSiblingOf(item) {
+    var siblings = getSiblingButtons(item) || [];
+    var currentIndex = siblings.indexOf(item);
+
+    if (currentIndex !== -1) {
+      var next = siblings[currentIndex + 1];
+
+      if (next) {
+        next.focus();
+      }
+    }
+  }
+  function focusPreviousSiblingOf(item) {
+    var siblings = getSiblingButtons(item) || [];
+    var currentIndex = siblings.indexOf(item);
+
+    if (currentIndex !== -1) {
+      var previous = siblings[currentIndex - 1];
+
+      if (previous) {
+        previous.focus();
+      }
+    }
+  }
+
+  var keycodes = {
+    END: 'End',
+    ENTER: 'Enter',
+    HOME: 'Home',
+    SPACE: ' ',
+    SPACE_DEPRECATED: 'Spacebar',
+    UP: 'ArrowUp',
+    DOWN: 'ArrowDown',
+    LEFT: 'ArrowLeft',
+    RIGHT: 'ArrowRight'
+  };
+
+  var _excluded$2 = ["toggleExpanded", "className"];
+
+  var AccordionItemButton = function AccordionItemButton(_ref) {
+    var toggleExpanded = _ref.toggleExpanded,
+        _ref$className = _ref.className,
+        className = _ref$className === void 0 ? 'accordion__button' : _ref$className,
+        rest = _objectWithoutProperties(_ref, _excluded$2);
+
+    var handleKeyPress = function handleKeyPress(evt) {
+      var keyCode = evt.key;
+
+      if (keyCode === keycodes.ENTER || keyCode === keycodes.SPACE || keyCode === keycodes.SPACE_DEPRECATED) {
+        evt.preventDefault();
+        toggleExpanded();
+      }
+      /* The following block is ignored from test coverage because at time
+       * time of writing Jest/react-testing-library can not assert 'focus'
+       * functionality.
+       */
+      // istanbul ignore next
+
+
+      if (evt.target instanceof HTMLElement) {
+        switch (keyCode) {
+          case keycodes.HOME:
+            {
+              evt.preventDefault();
+              focusFirstSiblingOf(evt.target);
+              break;
+            }
+
+          case keycodes.END:
+            {
+              evt.preventDefault();
+              focusLastSiblingOf(evt.target);
+              break;
+            }
+
+          case keycodes.LEFT:
+          case keycodes.UP:
+            {
+              evt.preventDefault();
+              focusPreviousSiblingOf(evt.target);
+              break;
+            }
+
+          case keycodes.RIGHT:
+          case keycodes.DOWN:
+            {
+              evt.preventDefault();
+              focusNextSiblingOf(evt.target);
+              break;
+            }
+        }
+      }
+    };
+
+    if (rest.id) {
+      assertValidHtmlId(rest.id);
+    }
+
+    return /*#__PURE__*/React.createElement("div", _extends({
+      className: className
+    }, rest, {
+      role: "button",
+      tabIndex: 0,
+      onClick: toggleExpanded,
+      onKeyDown: handleKeyPress,
+      "data-accordion-component": "AccordionItemButton"
+    }));
+  };
+
+  var AccordionItemButtonWrapper = function AccordionItemButtonWrapper(props) {
+    return /*#__PURE__*/React.createElement(Consumer$1, null, function (itemContext) {
+      var toggleExpanded = itemContext.toggleExpanded,
+          buttonAttributes = itemContext.buttonAttributes;
+      return /*#__PURE__*/React.createElement(AccordionItemButton, _extends({
+        toggleExpanded: toggleExpanded
+      }, props, buttonAttributes));
+    });
+  };
+
+  var defaultProps = {
+    className: 'accordion__heading',
+    'aria-level': 3
+  };
+  var SPEC_ERROR = "AccordionItemButton may contain only one child element, which must be an instance of AccordionItemButton.\n\nFrom the WAI-ARIA spec (https://www.w3.org/TR/wai-aria-practices-1.1/#accordion):\n\n\u201CThe button element is the only element inside the heading element. That is, if there are other visually persistent elements, they are not included inside the heading element.\u201D\n\n";
+  var AccordionItemHeading = /*#__PURE__*/function (_React$PureComponent) {
+    _inherits(AccordionItemHeading, _React$PureComponent);
+
+    var _super = _createSuper(AccordionItemHeading);
+
+    function AccordionItemHeading() {
+      var _this;
+
+      _classCallCheck(this, AccordionItemHeading);
+
+      for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+        args[_key] = arguments[_key];
+      }
+
+      _this = _super.call.apply(_super, [this].concat(args));
+
+      _defineProperty(_assertThisInitialized(_this), "ref", void 0);
+
+      _defineProperty(_assertThisInitialized(_this), "setRef", function (ref) {
+        _this.ref = ref;
+      });
+
+      return _this;
+    }
+
+    _createClass(AccordionItemHeading, [{
+      key: "componentDidUpdate",
+      value: function componentDidUpdate() {
+        AccordionItemHeading.VALIDATE(this.ref);
+      }
+    }, {
+      key: "componentDidMount",
+      value: function componentDidMount() {
+        AccordionItemHeading.VALIDATE(this.ref);
+      }
+    }, {
+      key: "render",
+      value: function render() {
+        return /*#__PURE__*/React.createElement("div", _extends({
+          "data-accordion-component": "AccordionItemHeading"
+        }, this.props, {
+          ref: this.setRef
+        }));
+      }
+    }], [{
+      key: "VALIDATE",
+      value: function VALIDATE(ref) {
+        if (ref === undefined) {
+          throw new Error('ref is undefined');
+        }
+
+        if (!(ref.childElementCount === 1 && ref.firstElementChild && ref.firstElementChild.getAttribute('data-accordion-component') === 'AccordionItemButton')) {
+          throw new Error(SPEC_ERROR);
+        }
+      }
+    }]);
+
+    return AccordionItemHeading;
+  }(React.PureComponent);
+
+  _defineProperty(AccordionItemHeading, "defaultProps", defaultProps);
+
+  var AccordionItemHeadingWrapper = function AccordionItemHeadingWrapper(props) {
+    return /*#__PURE__*/React.createElement(Consumer$1, null, function (itemContext) {
+      var headingAttributes = itemContext.headingAttributes;
+
+      if (props.id) {
+        assertValidHtmlId(props.id);
+      }
+
+      return /*#__PURE__*/React.createElement(AccordionItemHeading, _extends({}, props, headingAttributes));
+    });
+  };
+
+  AccordionItemHeadingWrapper.displayName = DisplayName$1.AccordionItemHeading;
+
+  var _excluded$3 = ["className", "region", "id"];
+
+  var AccordionItemPanel = function AccordionItemPanel(_ref) {
+    var _ref$className = _ref.className,
+        className = _ref$className === void 0 ? 'accordion__panel' : _ref$className,
+        region = _ref.region,
+        id = _ref.id,
+        rest = _objectWithoutProperties(_ref, _excluded$3);
+
+    var renderChildren = function renderChildren(_ref2) {
+      var panelAttributes = _ref2.panelAttributes;
+
+      if (id) {
+        assertValidHtmlId(id);
+      }
+
+      var attrs = _objectSpread2(_objectSpread2({}, panelAttributes), {}, {
+        'aria-labelledby': region ? panelAttributes['aria-labelledby'] : undefined
+      });
+
+      return /*#__PURE__*/React.createElement("div", _extends({
+        "data-accordion-component": "AccordionItemPanel",
+        className: className
+      }, rest, attrs, {
+        role: region ? 'region' : undefined
+      }));
+    };
+
+    return /*#__PURE__*/React.createElement(Consumer$1, null, renderChildren);
+  };
+
+  var AccordionItemState = function AccordionItemState(_ref) {
+    var children = _ref.children;
+
+    var renderChildren = function renderChildren(itemContext) {
+      var expanded = itemContext.expanded,
+          disabled = itemContext.disabled;
+      return /*#__PURE__*/React.createElement(React.Fragment, null, children({
+        expanded: expanded,
+        disabled: disabled
+      }));
+    };
+
+    return /*#__PURE__*/React.createElement(Consumer$1, null, renderChildren);
+  };
+
+  exports.Accordion = Accordion;
+  exports.AccordionItem = AccordionItem;
+  exports.AccordionItemButton = AccordionItemButtonWrapper;
+  exports.AccordionItemHeading = AccordionItemHeadingWrapper;
+  exports.AccordionItemPanel = AccordionItemPanel;
+  exports.AccordionItemState = AccordionItemState;
+  exports.resetNextUuid = resetGlobalCounterId;
+
+  Object.defineProperty(exports, '__esModule', { value: true });
+
+})));
+
+},{"react":"react"}],"/Users/carterjin/Desktop/University/Fourth year/4474/CS4474-Final-Report/node_modules/react-dom-factories/index.js":[function(require,module,exports){
 (function (global){(function (){
 'use strict';
 
@@ -69630,7 +70750,7 @@ module.exports = function whichTypedArray(value) {
 },{"available-typed-arrays":"/Users/carterjin/Desktop/University/Fourth year/4474/CS4474-Final-Report/node_modules/available-typed-arrays/index.js","call-bind/callBound":"/Users/carterjin/Desktop/University/Fourth year/4474/CS4474-Final-Report/node_modules/call-bind/callBound.js","for-each":"/Users/carterjin/Desktop/University/Fourth year/4474/CS4474-Final-Report/node_modules/for-each/index.js","gopd":"/Users/carterjin/Desktop/University/Fourth year/4474/CS4474-Final-Report/node_modules/gopd/index.js","has-tostringtag/shams":"/Users/carterjin/Desktop/University/Fourth year/4474/CS4474-Final-Report/node_modules/has-tostringtag/shams.js","is-typed-array":"/Users/carterjin/Desktop/University/Fourth year/4474/CS4474-Final-Report/node_modules/is-typed-array/index.js"}],"__IDYLL_AST__":[function(require,module,exports){
 "use strict";
 
-module.exports = { "id": 0, "type": "component", "name": "div", "children": [{ "id": 2, "type": "var", "properties": { "name": { "type": "value", "value": "navigationMode" }, "value": { "type": "value", "value": "Graph" } } }, { "id": 3, "type": "component", "name": "TextContainer", "children": [{ "id": 4, "type": "meta", "properties": { "title": { "type": "value", "value": "Library Space Booking System Web" }, "description": { "type": "value", "value": "This is the web interactive article of the final report of CS4474" } } }] }, { "id": 5, "type": "component", "name": "Header", "properties": { "title": { "type": "value", "value": "Library Space Booking System Web" }, "subtitle": { "type": "value", "value": "Final Report" }, "author": { "type": "value", "value": "Connor Haines, Serena Hou, Sheng Gen Jin, Moneet Tiwana, Wenxuan Zhang" }, "date": { "type": "value", "value": "Mar 11, 2023" }, "background": { "type": "value", "value": "#222222" }, "color": { "type": "value", "value": "#ffffff" } }, "children": [] }, { "id": 6, "type": "component", "name": "TextContainer", "children": [{ "id": 7, "type": "component", "name": "h2", "children": [{ "id": 8, "type": "textnode", "value": "Overview" }] }, { "id": 9, "type": "component", "name": "p", "children": [{ "id": 10, "type": "textnode", "value": "Library Space Booking System Web is a rebuild of the " }, { "id": 11, "type": "component", "name": "link", "properties": { "text": { "type": "value", "value": "terminal application" }, "url": { "type": "value", "value": "https://github.com/connor2033/LibrarySpaceBookingSystem" }, "target": { "type": "value", "value": "_blank" } }, "children": [] }, { "id": 12, "type": "textnode", "value": " with the same name but in a web context.\nComponents and features are redesigned in a modern skeuomorphic look. " }] }, { "id": 13, "type": "component", "name": "Preview", "properties": { "title": { "type": "value", "value": "Library Space Booking System Web" }, "description": { "type": "value", "value": "Try the system here." }, "url": { "type": "value", "value": "https://mclhtay.github.io/LibrarySpaceBookingSystemWeb" }, "media": { "type": "value", "value": "https://www.communications.uwo.ca/img/logo_teasers/Stacked.gif" } }, "children": [] }, { "id": 14, "type": "component", "name": "pre", "children": [{ "id": 15, "type": "component", "name": "code", "children": [{ "id": 16, "type": "textnode", "value": "You can try to login with the following credentials\n\n* As a student\n** email: student@uwo.ca\n** password: student\n\n* As an administrator\n** email: librarian@uwo.ca\n** password: librarian" }] }] }, { "id": 17, "type": "component", "name": "h2", "children": [{ "id": 18, "type": "textnode", "value": "Executive Summary" }] }, { "id": 19, "type": "component", "name": "p", "children": [{ "id": 20, "type": "textnode", "value": "The Library Space Booking System Web (LSBSW) implements several design principles, interfaces, and leverages macro- and micro-level interactions in order to provide a user-centered re-design of the previously implemented command-line program. Although the command-line program is able to provide similar features as the new re-design, the new implementation that is demonstrated in this final project is developed using different levels of design thinking to meet usability and user experience goals." }] }, { "id": 21, "type": "component", "name": "p", "children": [{ "id": 22, "type": "textnode", "value": "The promised features of the system ensure that the system allows students to book rooms that are only available to book at that time. The system also ensures that the timings are updated accordingly as students book rooms in the libraries to mark these rooms as unavailable for the booked times. Furthermore, the LSBSW will prevent users from booking rooms if the information is incorrect, or if they attempt to book the rooms during unavailable times. On the other hand, the librarian has increased features, such as adding and removing rooms as well as overriding certain features due to the enhanced permissions of a librarian user. " }] }, { "id": 23, "type": "component", "name": "p", "children": [{ "id": 24, "type": "textnode", "value": "In order to meet usability and user experience goals, several design principles are implemented through various design decisions. The usability goals are met by ensuring that users are able to intuitively understand how to use the platform through clear instructions. Furthermore, our design resembles the current designs of existing Western-owned software in order to leverage the familiarity that students may already have with current Western software, such as Draft My Schedule and Summer Timetable. Similarly, user experience goals are met that can allow students to easily manage library resources online through simplistic and minimal visual elements. " }] }, { "id": 25, "type": "component", "name": "p", "children": [{ "id": 26, "type": "textnode", "value": "The design principles that are defined by Donald Norman, as well as design principles studied in the Computer Science 4474A/B course, are implemented throughout the project in order to enhance the user experience of the students that will be using the new software. Although these design principles are explained in further detail in the later sections of this report, some of the important design principles to highlight include visibility, feedback, constraint, consistency, affordance and mapping. Overall, these principles are met by providing intuitive features that can help guide the users toward their goals in using the system. Additionally, the system provides only useful information to the users and helpful messages along the way. For further details on the implemented design principles, please see Section 3: Justification of 20 Implemented Design Principles of the final report. " }] }, { "id": 27, "type": "component", "name": "p", "children": [{ "id": 28, "type": "textnode", "value": "The LSBSW makes use of the different types of interfaces in order to provide a pleasurable experience to the users. The interface of the original design simply used a command-based interface for the entire program. However, the new re-design of the program uses some different interfaces in order to create an improved user-centered design. One of these interfaces is the WIMP (Window, Icon, Menu, Pointer) interface. This interface is familiar to students and librarians as they are assured to have worked with this interface style with similar Western-owned software. Within the WIMP interface, we integrated the use of the Web interface, as this system is designed to be used within a web browser to support the forms and the updating of available resources among multiple users. " }] }, { "id": 29, "type": "component", "name": "p", "children": [{ "id": 30, "type": "textnode", "value": "The interactivity of the LSBSW can be divided into two different levels, micro-level and macro-level interactions. For the micro-level interactions, the most prominent interactions to highlight are presence, granularity, and timing within the action anatomy of the interactions. The presence interaction uses explicit and implicit presence, by changing the shape of the cursor to indicate that a button is clickable for explicit interaction, and assuming that the user understands how to use online forms for implicit presence. Furthermore, the system uses composite granularity for users to be able to complete various tasks, such as booking a room by selecting the times to reserve, filling out personal information, and submitting the request. Lastly, the timing of the system allows the user to self-pace themselves in order to be able to make careful decisions when booking rooms and ensuring that the user does not feel rushed. " }] }, { "id": 31, "type": "component", "name": "p", "children": [{ "id": 32, "type": "textnode", "value": "As for macro-level interactions, the diversity is impacted based on the type of user that logs into the system. For example, the diversity is lessened when a student logs into the system over a librarian, as a librarian can implement more features such as adding and removing rooms. The complimentarity builds on the granularity of the tasks, as the individual micro-level interactions allow users to perform bigger cognitive tasks. Additionally, the flexibility of the system is enhanced through the different tabs to adjust the interface to allow the user to only see information relevant to their goals. Finally, the genre of the system is maintained through annotation-based interactions for students to book existing rooms and combination-based interactions for librarians to add new rooms. " }] }, { "id": 33, "type": "component", "name": "p", "children": [{ "id": 34, "type": "textnode", "value": "Overall, the LSBSW provides a user-friendly experience targeted specifically for Western University students and librarians. By ensuring a strong presence of usability goals, user experience goals, and design principles within the system re-design, Western students can interact with a system that is much easier to use than a command line program and easily manage library resources." }] }, { "id": 35, "type": "component", "name": "h2", "children": [{ "id": 36, "type": "textnode", "value": "Navigation Map" }] }, { "id": 37, "type": "component", "name": "link", "properties": { "text": { "type": "value", "value": "See the detailed map," }, "url": { "type": "value", "value": "static/images/storyboard.jpg" }, "target": { "type": "value", "value": "_blank" } }, "children": [] }, { "id": 38, "type": "component", "name": "Display", "properties": { "value": { "type": "value", "value": " or explore the interactive navigator below." } }, "children": [] }, { "id": 39, "type": "component", "name": "div", "properties": { "className": { "type": "value", "value": "navigation-map" } }, "children": [{ "id": 40, "type": "component", "name": "Display", "properties": { "value": { "type": "value", "value": "Choose a navigation mode:" } }, "children": [] }, { "id": 41, "type": "component", "name": "span", "children": [{ "id": 42, "type": "component", "name": "Radio", "properties": { "value": { "type": "variable", "value": "navigationMode" }, "options": { "type": "expression", "value": "[\"Graph\", \"Controlled\"]" } }, "children": [] }] }] }] }, { "id": 43, "type": "component", "name": "div", "properties": { "className": { "type": "value", "value": "fullWidth" } }, "children": [{ "id": 44, "type": "component", "name": "Conditional", "properties": { "if": { "type": "expression", "value": "navigationMode == \"Graph\"" } }, "children": [{ "id": 45, "type": "component", "name": "NavigationGraph", "children": [] }] }, { "id": 46, "type": "component", "name": "Conditional", "properties": { "if": { "type": "expression", "value": "navigationMode == \"Controlled\"" } }, "children": [{ "id": 47, "type": "component", "name": "NavigationControlled", "children": [] }] }] }, { "id": 48, "type": "component", "name": "TextContainer", "children": [{ "id": 49, "type": "component", "name": "h2", "children": [{ "id": 50, "type": "textnode", "value": "Design Principles" }] }, { "id": 51, "type": "component", "name": "h2", "children": [{ "id": 52, "type": "textnode", "value": "Heuristic Evaluation" }] }, { "id": 53, "type": "component", "name": "h4", "children": [{ "id": 54, "type": "textnode", "value": "Visibility of System Status" }] }, { "id": 55, "type": "component", "name": "ul", "children": [{ "id": 56, "type": "component", "name": "li", "children": [{ "id": 57, "type": "textnode", "value": "The system gives a status message to let the user know if the study room has been booked successfully" }] }] }, { "id": 58, "type": "component", "name": "h4", "children": [{ "id": 59, "type": "textnode", "value": "Match Between the System and the Real World" }] }, { "id": 60, "type": "component", "name": "ul", "children": [{ "id": 61, "type": "component", "name": "li", "children": [{ "id": 62, "type": "textnode", "value": "Language is plain and straightforward" }] }, { "id": 63, "type": "component", "name": "li", "children": [{ "id": 64, "type": "textnode", "value": "System uses skeuomorphic design in the form of a garbage icon to represent deleting a booking, a plus button to represent adding a booking, and a door with an arrow icon to represent logging out. The representations make sense and align well with their real-world counterparts." }] }] }, { "id": 65, "type": "component", "name": "h4", "children": [{ "id": 66, "type": "textnode", "value": "User Control & Freedom" }] }, { "id": 67, "type": "component", "name": "ul", "children": [{ "id": 68, "type": "component", "name": "li", "children": [{ "id": 69, "type": "textnode", "value": "If the user clicks on the add button by accident, there is a cancel button clearly marked to allow them to escape." }] }, { "id": 70, "type": "component", "name": "li", "children": [{ "id": 71, "type": "textnode", "value": "If the user clicks delete by accident, the system confirms with the user whether they really want to proceed." }] }] }, { "id": 72, "type": "component", "name": "h4", "children": [{ "id": 73, "type": "textnode", "value": "Consistency and Standards" }] }, { "id": 74, "type": "component", "name": "ul", "children": [{ "id": 75, "type": "component", "name": "li", "children": [{ "id": 76, "type": "textnode", "value": "The system maintains internal consistency by using the colour blue to indicate actions like adding a booking, confirming, logging in, etc. while using grey or white for actions that indicate canceling or going back, like deleting a booking, canceling adding a booking, or logging out." }] }, { "id": 77, "type": "component", "name": "li", "children": [{ "id": 78, "type": "textnode", "value": "However, the confirm button for when the user tries to delete a booking is not blue." }] }, { "id": 79, "type": "component", "name": "li", "children": [{ "id": 80, "type": "textnode", "value": "The system maintains external consistency by using the garbage icon for delete, plus sign for add, door icon with arrow for logout, which are commonly used in other sites." }] }] }, { "id": 81, "type": "component", "name": "h4", "children": [{ "id": 82, "type": "textnode", "value": "Error Prevention" }] }, { "id": 83, "type": "component", "name": "ul", "children": [{ "id": 84, "type": "component", "name": "li", "children": [{ "id": 85, "type": "textnode", "value": "The system does not ask the user whether they’re sure they want to logout, so errors may occur." }] }] }, { "id": 86, "type": "component", "name": "h4", "children": [{ "id": 87, "type": "textnode", "value": "Recognition vs. Recall in User Interfaces" }] }, { "id": 88, "type": "component", "name": "ul", "children": [{ "id": 89, "type": "component", "name": "li", "children": [{ "id": 90, "type": "textnode", "value": "When adding a booking, the interface shows available times and options such as quiet, private, and accessible spaces to prompt the user rather than making the user remember all of these times and features." }] }] }, { "id": 91, "type": "component", "name": "h4", "children": [{ "id": 92, "type": "textnode", "value": "Flexibility and Efficiency of Use" }] }, { "id": 93, "type": "component", "name": "ul", "children": [{ "id": 94, "type": "component", "name": "li", "children": [{ "id": 95, "type": "textnode", "value": "Enter button could be used to sign in as well as the sign in button" }] }] }, { "id": 96, "type": "component", "name": "h4", "children": [{ "id": 97, "type": "textnode", "value": "Aesthetic and Minimalist Design" }] }, { "id": 98, "type": "component", "name": "ul", "children": [{ "id": 99, "type": "component", "name": "li", "children": [{ "id": 100, "type": "textnode", "value": "Most of the information shown is relevant to the user, there is very little noise (high signal to noise ratio)" }] }] }, { "id": 101, "type": "component", "name": "h4", "children": [{ "id": 102, "type": "textnode", "value": "Help Users Recognize, Diagnose and Recover from Errors" }] }, { "id": 103, "type": "component", "name": "ul", "children": [{ "id": 104, "type": "component", "name": "li", "children": [{ "id": 105, "type": "textnode", "value": "Shows an error message when login in invalid, but could specify if the password is wrong, or if there is no account associated with the email" }] }, { "id": 106, "type": "component", "name": "li", "children": [{ "id": 107, "type": "textnode", "value": "When the user adds a booked, there’s a warning that says “Some inputs are invalid, please adjust them to see available slots”, but this is not specific enough to help the user understand what errors could potentially occur" }] }] }, { "id": 108, "type": "component", "name": "h4", "children": [{ "id": 109, "type": "textnode", "value": "Help & Documentation" }] }, { "id": 110, "type": "component", "name": "ul", "children": [{ "id": 111, "type": "component", "name": "li", "children": [{ "id": 112, "type": "textnode", "value": "No help page or chatbot" }] }] }, { "id": 113, "type": "component", "name": "h2", "children": [{ "id": 114, "type": "textnode", "value": "Recommendations" }] }, { "id": 115, "type": "component", "name": "p", "children": [{ "id": 116, "type": "textnode", "value": "The follow are some of the possible improvements that can be made to the system:" }] }, { "id": 117, "type": "component", "name": "ol", "children": [{ "id": 118, "type": "component", "name": "li", "children": [{ "id": 119, "type": "textnode", "value": "Ask the user if they’re sure they want to log out in case they clicked it by accident" }] }, { "id": 120, "type": "component", "name": "li", "children": [{ "id": 121, "type": "textnode", "value": "Make a help page or chatbot" }] }, { "id": 122, "type": "component", "name": "li", "children": [{ "id": 123, "type": "textnode", "value": "Add a maximum booking duration threshold" }] }] }] }] };
+module.exports = { "id": 0, "type": "component", "name": "div", "children": [{ "id": 2, "type": "var", "properties": { "name": { "type": "value", "value": "navigationMode" }, "value": { "type": "value", "value": "Graph" } } }, { "id": 3, "type": "component", "name": "TextContainer", "children": [{ "id": 4, "type": "meta", "properties": { "title": { "type": "value", "value": "Library Space Booking System Web" }, "description": { "type": "value", "value": "This is the web interactive article of the final report of CS4474" } } }] }, { "id": 5, "type": "component", "name": "Header", "properties": { "title": { "type": "value", "value": "Library Space Booking System Web" }, "subtitle": { "type": "value", "value": "Final Report" }, "author": { "type": "value", "value": "Connor Haines, Serena Hou, Sheng Gen Jin, Moneet Tiwana, Wenxuan Zhang" }, "date": { "type": "value", "value": "Mar 11, 2023" }, "background": { "type": "value", "value": "#222222" }, "color": { "type": "value", "value": "#ffffff" } }, "children": [] }, { "id": 6, "type": "component", "name": "TextContainer", "children": [{ "id": 7, "type": "component", "name": "h2", "children": [{ "id": 8, "type": "textnode", "value": "Overview" }] }, { "id": 9, "type": "component", "name": "p", "children": [{ "id": 10, "type": "textnode", "value": "Library Space Booking System Web is a rebuild of the " }, { "id": 11, "type": "component", "name": "link", "properties": { "text": { "type": "value", "value": "terminal application" }, "url": { "type": "value", "value": "https://github.com/connor2033/LibrarySpaceBookingSystem" }, "target": { "type": "value", "value": "_blank" } }, "children": [] }, { "id": 12, "type": "textnode", "value": " with the same name but in a web context.\nComponents and features are redesigned in a modern skeuomorphic look. " }] }, { "id": 13, "type": "component", "name": "Preview", "properties": { "title": { "type": "value", "value": "Library Space Booking System Web" }, "description": { "type": "value", "value": "Try the system here." }, "url": { "type": "value", "value": "https://mclhtay.github.io/LibrarySpaceBookingSystemWeb" }, "media": { "type": "value", "value": "https://www.communications.uwo.ca/img/logo_teasers/Stacked.gif" } }, "children": [] }, { "id": 14, "type": "component", "name": "pre", "children": [{ "id": 15, "type": "component", "name": "code", "children": [{ "id": 16, "type": "textnode", "value": "You can try to login with the following credentials\n\n* As a student\n** email: student@uwo.ca\n** password: student\n\n* As an administrator\n** email: librarian@uwo.ca\n** password: librarian" }] }] }, { "id": 17, "type": "component", "name": "h2", "children": [{ "id": 18, "type": "textnode", "value": "Executive Summary" }] }, { "id": 19, "type": "component", "name": "p", "children": [{ "id": 20, "type": "textnode", "value": "The Library Space Booking System Web (LSBSW) implements several design principles, interfaces, and leverages macro- and micro-level interactions in order to provide a user-centered re-design of the previously implemented command-line program. Although the command-line program is able to provide similar features as the new re-design, the new implementation that is demonstrated in this final project is developed using different levels of design thinking to meet usability and user experience goals." }] }, { "id": 21, "type": "component", "name": "p", "children": [{ "id": 22, "type": "textnode", "value": "The promised features of the system ensure that the system allows students to book rooms that are only available to book at that time. The system also ensures that the timings are updated accordingly as students book rooms in the libraries to mark these rooms as unavailable for the booked times. Furthermore, the LSBSW will prevent users from booking rooms if the information is incorrect, or if they attempt to book the rooms during unavailable times. On the other hand, the librarian has increased features, such as adding and removing rooms as well as overriding certain features due to the enhanced permissions of a librarian user. " }] }, { "id": 23, "type": "component", "name": "p", "children": [{ "id": 24, "type": "textnode", "value": "In order to meet usability and user experience goals, several design principles are implemented through various design decisions. The usability goals are met by ensuring that users are able to intuitively understand how to use the platform through clear instructions. Furthermore, our design resembles the current designs of existing Western-owned software in order to leverage the familiarity that students may already have with current Western software, such as Draft My Schedule and Summer Timetable. Similarly, user experience goals are met that can allow students to easily manage library resources online through simplistic and minimal visual elements. " }] }, { "id": 25, "type": "component", "name": "p", "children": [{ "id": 26, "type": "textnode", "value": "The design principles that are defined by Donald Norman, as well as design principles studied in the Computer Science 4474A/B course, are implemented throughout the project in order to enhance the user experience of the students that will be using the new software. Although these design principles are explained in further detail in the later sections of this report, some of the important design principles to highlight include visibility, feedback, constraint, consistency, affordance and mapping. Overall, these principles are met by providing intuitive features that can help guide the users toward their goals in using the system. Additionally, the system provides only useful information to the users and helpful messages along the way. For further details on the implemented design principles, please see Section 3: Justification of 20 Implemented Design Principles of the final report. " }] }, { "id": 27, "type": "component", "name": "p", "children": [{ "id": 28, "type": "textnode", "value": "The LSBSW makes use of the different types of interfaces in order to provide a pleasurable experience to the users. The interface of the original design simply used a command-based interface for the entire program. However, the new re-design of the program uses some different interfaces in order to create an improved user-centered design. One of these interfaces is the WIMP (Window, Icon, Menu, Pointer) interface. This interface is familiar to students and librarians as they are assured to have worked with this interface style with similar Western-owned software. Within the WIMP interface, we integrated the use of the Web interface, as this system is designed to be used within a web browser to support the forms and the updating of available resources among multiple users. " }] }, { "id": 29, "type": "component", "name": "p", "children": [{ "id": 30, "type": "textnode", "value": "The interactivity of the LSBSW can be divided into two different levels, micro-level and macro-level interactions. For the micro-level interactions, the most prominent interactions to highlight are presence, granularity, and timing within the action anatomy of the interactions. The presence interaction uses explicit and implicit presence, by changing the shape of the cursor to indicate that a button is clickable for explicit interaction, and assuming that the user understands how to use online forms for implicit presence. Furthermore, the system uses composite granularity for users to be able to complete various tasks, such as booking a room by selecting the times to reserve, filling out personal information, and submitting the request. Lastly, the timing of the system allows the user to self-pace themselves in order to be able to make careful decisions when booking rooms and ensuring that the user does not feel rushed. " }] }, { "id": 31, "type": "component", "name": "p", "children": [{ "id": 32, "type": "textnode", "value": "As for macro-level interactions, the diversity is impacted based on the type of user that logs into the system. For example, the diversity is lessened when a student logs into the system over a librarian, as a librarian can implement more features such as adding and removing rooms. The complimentarity builds on the granularity of the tasks, as the individual micro-level interactions allow users to perform bigger cognitive tasks. Additionally, the flexibility of the system is enhanced through the different tabs to adjust the interface to allow the user to only see information relevant to their goals. Finally, the genre of the system is maintained through annotation-based interactions for students to book existing rooms and combination-based interactions for librarians to add new rooms. " }] }, { "id": 33, "type": "component", "name": "p", "children": [{ "id": 34, "type": "textnode", "value": "Overall, the LSBSW provides a user-friendly experience targeted specifically for Western University students and librarians. By ensuring a strong presence of usability goals, user experience goals, and design principles within the system re-design, Western students can interact with a system that is much easier to use than a command line program and easily manage library resources." }] }, { "id": 35, "type": "component", "name": "h2", "children": [{ "id": 36, "type": "textnode", "value": "Navigation Map" }] }, { "id": 37, "type": "component", "name": "link", "properties": { "text": { "type": "value", "value": "See the detailed map," }, "url": { "type": "value", "value": "static/images/storyboard.jpg" }, "target": { "type": "value", "value": "_blank" } }, "children": [] }, { "id": 38, "type": "component", "name": "Display", "properties": { "value": { "type": "value", "value": " or explore the interactive navigator below." } }, "children": [] }, { "id": 39, "type": "component", "name": "div", "properties": { "className": { "type": "value", "value": "navigation-map" } }, "children": [{ "id": 40, "type": "component", "name": "Display", "properties": { "value": { "type": "value", "value": "Choose a navigation mode:" } }, "children": [] }, { "id": 41, "type": "component", "name": "span", "children": [{ "id": 42, "type": "component", "name": "Radio", "properties": { "value": { "type": "variable", "value": "navigationMode" }, "options": { "type": "expression", "value": "[\"Graph\", \"Controlled\"]" } }, "children": [] }] }] }] }, { "id": 43, "type": "component", "name": "div", "properties": { "className": { "type": "value", "value": "fullWidth" } }, "children": [{ "id": 44, "type": "component", "name": "Conditional", "properties": { "if": { "type": "expression", "value": "navigationMode == \"Graph\"" } }, "children": [{ "id": 45, "type": "component", "name": "NavigationGraph", "children": [] }] }, { "id": 46, "type": "component", "name": "Conditional", "properties": { "if": { "type": "expression", "value": "navigationMode == \"Controlled\"" } }, "children": [{ "id": 47, "type": "component", "name": "NavigationControlled", "children": [] }] }] }, { "id": 48, "type": "component", "name": "TextContainer", "children": [{ "id": 49, "type": "component", "name": "h2", "children": [{ "id": 50, "type": "textnode", "value": "Design Principles" }] }, { "id": 51, "type": "component", "name": "Design", "children": [] }, { "id": 52, "type": "component", "name": "h2", "children": [{ "id": 53, "type": "textnode", "value": "Heuristic Evaluation" }] }, { "id": 54, "type": "component", "name": "h4", "children": [{ "id": 55, "type": "textnode", "value": "Visibility of System Status" }] }, { "id": 56, "type": "component", "name": "ul", "children": [{ "id": 57, "type": "component", "name": "li", "children": [{ "id": 58, "type": "textnode", "value": "The system gives a status message to let the user know if the study room has been booked successfully" }] }] }, { "id": 59, "type": "component", "name": "h4", "children": [{ "id": 60, "type": "textnode", "value": "Match Between the System and the Real World" }] }, { "id": 61, "type": "component", "name": "ul", "children": [{ "id": 62, "type": "component", "name": "li", "children": [{ "id": 63, "type": "textnode", "value": "Language is plain and straightforward" }] }, { "id": 64, "type": "component", "name": "li", "children": [{ "id": 65, "type": "textnode", "value": "System uses skeuomorphic design in the form of a garbage icon to represent deleting a booking, a plus button to represent adding a booking, and a door with an arrow icon to represent logging out. The representations make sense and align well with their real-world counterparts." }] }] }, { "id": 66, "type": "component", "name": "h4", "children": [{ "id": 67, "type": "textnode", "value": "User Control & Freedom" }] }, { "id": 68, "type": "component", "name": "ul", "children": [{ "id": 69, "type": "component", "name": "li", "children": [{ "id": 70, "type": "textnode", "value": "If the user clicks on the add button by accident, there is a cancel button clearly marked to allow them to escape." }] }, { "id": 71, "type": "component", "name": "li", "children": [{ "id": 72, "type": "textnode", "value": "If the user clicks delete by accident, the system confirms with the user whether they really want to proceed." }] }] }, { "id": 73, "type": "component", "name": "h4", "children": [{ "id": 74, "type": "textnode", "value": "Consistency and Standards" }] }, { "id": 75, "type": "component", "name": "ul", "children": [{ "id": 76, "type": "component", "name": "li", "children": [{ "id": 77, "type": "textnode", "value": "The system maintains internal consistency by using the colour blue to indicate actions like adding a booking, confirming, logging in, etc. while using grey or white for actions that indicate canceling or going back, like deleting a booking, canceling adding a booking, or logging out." }] }, { "id": 78, "type": "component", "name": "li", "children": [{ "id": 79, "type": "textnode", "value": "However, the confirm button for when the user tries to delete a booking is not blue." }] }, { "id": 80, "type": "component", "name": "li", "children": [{ "id": 81, "type": "textnode", "value": "The system maintains external consistency by using the garbage icon for delete, plus sign for add, door icon with arrow for logout, which are commonly used in other sites." }] }] }, { "id": 82, "type": "component", "name": "h4", "children": [{ "id": 83, "type": "textnode", "value": "Error Prevention" }] }, { "id": 84, "type": "component", "name": "ul", "children": [{ "id": 85, "type": "component", "name": "li", "children": [{ "id": 86, "type": "textnode", "value": "The system does not ask the user whether they’re sure they want to logout, so errors may occur." }] }] }, { "id": 87, "type": "component", "name": "h4", "children": [{ "id": 88, "type": "textnode", "value": "Recognition vs. Recall in User Interfaces" }] }, { "id": 89, "type": "component", "name": "ul", "children": [{ "id": 90, "type": "component", "name": "li", "children": [{ "id": 91, "type": "textnode", "value": "When adding a booking, the interface shows available times and options such as quiet, private, and accessible spaces to prompt the user rather than making the user remember all of these times and features." }] }] }, { "id": 92, "type": "component", "name": "h4", "children": [{ "id": 93, "type": "textnode", "value": "Flexibility and Efficiency of Use" }] }, { "id": 94, "type": "component", "name": "ul", "children": [{ "id": 95, "type": "component", "name": "li", "children": [{ "id": 96, "type": "textnode", "value": "Enter button could be used to sign in as well as the sign in button" }] }] }, { "id": 97, "type": "component", "name": "h4", "children": [{ "id": 98, "type": "textnode", "value": "Aesthetic and Minimalist Design" }] }, { "id": 99, "type": "component", "name": "ul", "children": [{ "id": 100, "type": "component", "name": "li", "children": [{ "id": 101, "type": "textnode", "value": "Most of the information shown is relevant to the user, there is very little noise (high signal to noise ratio)" }] }] }, { "id": 102, "type": "component", "name": "h4", "children": [{ "id": 103, "type": "textnode", "value": "Help Users Recognize, Diagnose and Recover from Errors" }] }, { "id": 104, "type": "component", "name": "ul", "children": [{ "id": 105, "type": "component", "name": "li", "children": [{ "id": 106, "type": "textnode", "value": "Shows an error message when login in invalid, but could specify if the password is wrong, or if there is no account associated with the email" }] }, { "id": 107, "type": "component", "name": "li", "children": [{ "id": 108, "type": "textnode", "value": "When the user adds a booked, there’s a warning that says “Some inputs are invalid, please adjust them to see available slots”, but this is not specific enough to help the user understand what errors could potentially occur" }] }] }, { "id": 109, "type": "component", "name": "h4", "children": [{ "id": 110, "type": "textnode", "value": "Help & Documentation" }] }, { "id": 111, "type": "component", "name": "ul", "children": [{ "id": 112, "type": "component", "name": "li", "children": [{ "id": 113, "type": "textnode", "value": "No help page or chatbot" }] }] }, { "id": 114, "type": "component", "name": "h2", "children": [{ "id": 115, "type": "textnode", "value": "Recommendations" }] }, { "id": 116, "type": "component", "name": "p", "children": [{ "id": 117, "type": "textnode", "value": "The follow are some of the possible improvements that can be made to the system:" }] }, { "id": 118, "type": "component", "name": "ol", "children": [{ "id": 119, "type": "component", "name": "li", "children": [{ "id": 120, "type": "textnode", "value": "Ask the user if they’re sure they want to log out in case they clicked it by accident" }] }, { "id": 121, "type": "component", "name": "li", "children": [{ "id": 122, "type": "textnode", "value": "Make a help page or chatbot" }] }, { "id": 123, "type": "component", "name": "li", "children": [{ "id": 124, "type": "textnode", "value": "Add a maximum booking duration threshold" }] }] }] }] };
 
 },{}],"__IDYLL_COMPONENTS__":[function(require,module,exports){
 'use strict';
@@ -69646,10 +70766,11 @@ module.exports = {
 	'navigation-graph': require('/Users/carterjin/Desktop/University/Fourth year/4474/CS4474-Final-Report/components/navigation-graph.js'),
 	'conditional': require('/Users/carterjin/Desktop/University/Fourth year/4474/CS4474-Final-Report/node_modules/idyll-components/dist/cjs/conditional.js'),
 	'navigation-controlled': require('/Users/carterjin/Desktop/University/Fourth year/4474/CS4474-Final-Report/components/navigation-controlled.js'),
+	'design': require('/Users/carterjin/Desktop/University/Fourth year/4474/CS4474-Final-Report/components/design.js'),
 	'h4': require('/Users/carterjin/Desktop/University/Fourth year/4474/CS4474-Final-Report/node_modules/idyll-components/dist/cjs/h4.js')
 };
 
-},{"/Users/carterjin/Desktop/University/Fourth year/4474/CS4474-Final-Report/components/navigation-controlled.js":"/Users/carterjin/Desktop/University/Fourth year/4474/CS4474-Final-Report/components/navigation-controlled.js","/Users/carterjin/Desktop/University/Fourth year/4474/CS4474-Final-Report/components/navigation-graph.js":"/Users/carterjin/Desktop/University/Fourth year/4474/CS4474-Final-Report/components/navigation-graph.js","/Users/carterjin/Desktop/University/Fourth year/4474/CS4474-Final-Report/node_modules/idyll-components/dist/cjs/conditional.js":"/Users/carterjin/Desktop/University/Fourth year/4474/CS4474-Final-Report/node_modules/idyll-components/dist/cjs/conditional.js","/Users/carterjin/Desktop/University/Fourth year/4474/CS4474-Final-Report/node_modules/idyll-components/dist/cjs/display.js":"/Users/carterjin/Desktop/University/Fourth year/4474/CS4474-Final-Report/node_modules/idyll-components/dist/cjs/display.js","/Users/carterjin/Desktop/University/Fourth year/4474/CS4474-Final-Report/node_modules/idyll-components/dist/cjs/h2.js":"/Users/carterjin/Desktop/University/Fourth year/4474/CS4474-Final-Report/node_modules/idyll-components/dist/cjs/h2.js","/Users/carterjin/Desktop/University/Fourth year/4474/CS4474-Final-Report/node_modules/idyll-components/dist/cjs/h4.js":"/Users/carterjin/Desktop/University/Fourth year/4474/CS4474-Final-Report/node_modules/idyll-components/dist/cjs/h4.js","/Users/carterjin/Desktop/University/Fourth year/4474/CS4474-Final-Report/node_modules/idyll-components/dist/cjs/header.js":"/Users/carterjin/Desktop/University/Fourth year/4474/CS4474-Final-Report/node_modules/idyll-components/dist/cjs/header.js","/Users/carterjin/Desktop/University/Fourth year/4474/CS4474-Final-Report/node_modules/idyll-components/dist/cjs/link.js":"/Users/carterjin/Desktop/University/Fourth year/4474/CS4474-Final-Report/node_modules/idyll-components/dist/cjs/link.js","/Users/carterjin/Desktop/University/Fourth year/4474/CS4474-Final-Report/node_modules/idyll-components/dist/cjs/preview.js":"/Users/carterjin/Desktop/University/Fourth year/4474/CS4474-Final-Report/node_modules/idyll-components/dist/cjs/preview.js","/Users/carterjin/Desktop/University/Fourth year/4474/CS4474-Final-Report/node_modules/idyll-components/dist/cjs/radio.js":"/Users/carterjin/Desktop/University/Fourth year/4474/CS4474-Final-Report/node_modules/idyll-components/dist/cjs/radio.js","/Users/carterjin/Desktop/University/Fourth year/4474/CS4474-Final-Report/node_modules/idyll-components/dist/cjs/text-container.js":"/Users/carterjin/Desktop/University/Fourth year/4474/CS4474-Final-Report/node_modules/idyll-components/dist/cjs/text-container.js"}],"__IDYLL_CONTEXT__":[function(require,module,exports){
+},{"/Users/carterjin/Desktop/University/Fourth year/4474/CS4474-Final-Report/components/design.js":"/Users/carterjin/Desktop/University/Fourth year/4474/CS4474-Final-Report/components/design.js","/Users/carterjin/Desktop/University/Fourth year/4474/CS4474-Final-Report/components/navigation-controlled.js":"/Users/carterjin/Desktop/University/Fourth year/4474/CS4474-Final-Report/components/navigation-controlled.js","/Users/carterjin/Desktop/University/Fourth year/4474/CS4474-Final-Report/components/navigation-graph.js":"/Users/carterjin/Desktop/University/Fourth year/4474/CS4474-Final-Report/components/navigation-graph.js","/Users/carterjin/Desktop/University/Fourth year/4474/CS4474-Final-Report/node_modules/idyll-components/dist/cjs/conditional.js":"/Users/carterjin/Desktop/University/Fourth year/4474/CS4474-Final-Report/node_modules/idyll-components/dist/cjs/conditional.js","/Users/carterjin/Desktop/University/Fourth year/4474/CS4474-Final-Report/node_modules/idyll-components/dist/cjs/display.js":"/Users/carterjin/Desktop/University/Fourth year/4474/CS4474-Final-Report/node_modules/idyll-components/dist/cjs/display.js","/Users/carterjin/Desktop/University/Fourth year/4474/CS4474-Final-Report/node_modules/idyll-components/dist/cjs/h2.js":"/Users/carterjin/Desktop/University/Fourth year/4474/CS4474-Final-Report/node_modules/idyll-components/dist/cjs/h2.js","/Users/carterjin/Desktop/University/Fourth year/4474/CS4474-Final-Report/node_modules/idyll-components/dist/cjs/h4.js":"/Users/carterjin/Desktop/University/Fourth year/4474/CS4474-Final-Report/node_modules/idyll-components/dist/cjs/h4.js","/Users/carterjin/Desktop/University/Fourth year/4474/CS4474-Final-Report/node_modules/idyll-components/dist/cjs/header.js":"/Users/carterjin/Desktop/University/Fourth year/4474/CS4474-Final-Report/node_modules/idyll-components/dist/cjs/header.js","/Users/carterjin/Desktop/University/Fourth year/4474/CS4474-Final-Report/node_modules/idyll-components/dist/cjs/link.js":"/Users/carterjin/Desktop/University/Fourth year/4474/CS4474-Final-Report/node_modules/idyll-components/dist/cjs/link.js","/Users/carterjin/Desktop/University/Fourth year/4474/CS4474-Final-Report/node_modules/idyll-components/dist/cjs/preview.js":"/Users/carterjin/Desktop/University/Fourth year/4474/CS4474-Final-Report/node_modules/idyll-components/dist/cjs/preview.js","/Users/carterjin/Desktop/University/Fourth year/4474/CS4474-Final-Report/node_modules/idyll-components/dist/cjs/radio.js":"/Users/carterjin/Desktop/University/Fourth year/4474/CS4474-Final-Report/node_modules/idyll-components/dist/cjs/radio.js","/Users/carterjin/Desktop/University/Fourth year/4474/CS4474-Final-Report/node_modules/idyll-components/dist/cjs/text-container.js":"/Users/carterjin/Desktop/University/Fourth year/4474/CS4474-Final-Report/node_modules/idyll-components/dist/cjs/text-container.js"}],"__IDYLL_CONTEXT__":[function(require,module,exports){
 
 module.exports = function () {
 
